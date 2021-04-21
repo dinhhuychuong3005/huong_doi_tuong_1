@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    function Temperature(c){
+        this.tempc = c;
+        this.CtoF = function (){
+           return (this.tempc * 1.8) +32
+        }
+        this.CtoK = function (){
+            return this.tempc + 273
+        }
+    }
+    let temp = new Temperature(25)
+document.getElementById('result').innerHTML = '25 độ C = ' + temp.CtoF() + ' độ F ' + '<br>' + temp.CtoK() + ' độ K'
+</script>
+</body>
+</html>

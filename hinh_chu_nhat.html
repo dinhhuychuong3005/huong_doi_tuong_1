@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="400px" style="border: 1px solid #d3d3d3"></canvas>
+<p id="result"></p>
+<script>
+function Rectangle(width,height,){
+    this.width = width;
+    this.height = height;
+    this.chu_vi = function (){
+        return (width + height) * 2;
+    }
+    this.dien_tich = function (){
+        return width * height;
+    }
+}
+function creatRectangle(){
+    let ctx = document.getElementById('myCanvas').getContext('2d');
+   let width = Math.floor(Math.random() * window.innerWidth);
+   let height = Math.floor(Math.random() * window.innerHeight);
+
+   let rectangle = new Rectangle(width,height);
+   let chuvi = rectangle.chu_vi();
+   let dientich = rectangle.dien_tich();
+   document.getElementById('result').innerHTML = 'chu vi hình chữ nhật là ' + chuvi + ' diện tích hình chữ nhật là ' + dientich
+   ctx.fillRect(0,0,rectangle.width,rectangle.height);
+   ctx.fill();
+}
+creatRectangle()
+
+</script>
+</body>
+</html>
