@@ -7,21 +7,23 @@
 <body>
 <canvas id="myCanvas" width="1368px" height="768px" style="border: 1px solid #d3d3d3;"></canvas>
 <script>
-    function Circle(x,y,radius){
-        this.x = x;
-        this.y = y;
-        this.radius = radius;
+    // function Circle(x,y,radius){
+    //     this.x = x;
+    //     this.y = y;
+    //     this.radius = radius;
+    // }
+    function getRandomHex() {
+        return Math.floor(Math.random() * 255);
     }
-    function getRandomHex(){
-        return Math.floor(Math.random()*255);
-    }
-    function getRandomColor(){
+
+    function getRandomColor() {
         let red = getRandomHex();
         let green = getRandomHex();
         let blue = getRandomHex();
-        return "rgb(" + red + "," + blue + "," + green +")";
+        return "rgb(" + red + "," + blue + "," + green + ")";
     };
-    function creatCircle(x,y,radius){
+
+    function creatCircle(x, y, radius) {
         // let radius = Math.floor(Math.random()*80);
         this.x = x;
         this.y = y;
@@ -38,12 +40,14 @@
             ctx.fillStyle = color;
             ctx.fill();
         }
-        this.move = function (){
+        this.move = function () {
             this.x += this.speed;
             //y += 10;
         }
     }
-    let a = new creatCircle(100,100,80)
+
+    let a = new creatCircle(100, 100, 80)
+
     function clear() {
         let ctx = document.getElementById('myCanvas').getContext('2d');
         ctx.clearRect(0, 0, 1200, 1000)
@@ -51,18 +55,19 @@
 
     function moves() {
         clear();
-        b;
+        a.draw();
         a.move();
     }
-        moves();
-        console.log(a.x)
-        setInterval(moves, 1)
+
+    moves();
+    console.log(a.x)
+    setInterval(moves, 1)
 
     //function tao_nhieu_hinh_tron(){
     //for (let i = 0; i <15;i++){
     //a.draw;
     // move()
     //setInterval(tao_nhieu_hinh_tron, 1)
-    <img src="Car_Left.png" height="256" width="256"/></script>
+</script>
 </body>
 </html>
