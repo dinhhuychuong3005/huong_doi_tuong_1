@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<canvas id="mycanvas" width="1200" height="400"></canvas>
+<body>
+<script>
+    function creatCircle(a, b, c) {
+        // let x = Math.floor(Math.random()*(1200-10)+10);
+        // let y = Math.floor(Math.random()*(400-10)+10);
+        // let r = Math.floor(Math.random()*(60-10)+10);
+        this.x = a;
+        this.y = b;
+        this.r = c;
+        this.speed = 1;
+        this.draw = function () {
+            let red = Math.random() * 255;
+            let green = Math.random() * 255;
+            let blue = Math.random() * 255;
+            // let color = 'rgb(' + red + ',' + green + ',' + blue + ')'
+            let khung = document.getElementById('mycanvas');
+            let pen = khung.getContext('2d');
+            pen.beginPath()
+            pen.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+            pen.fillStyle = 'rgb(100,100,100)';
+            pen.fill();
+        }
+        this.move = function () {
+            this.x += this.speed;
+            // this.y += this.speed;
+        }
+        this.check = function () {
+            if (this.x > 300 || this.x <0 ){
+                this.speed = -this.speed;
+            }
+            if (this.x < 0){
+                this.x += this.speed;
+            }
+        }
+    }
+    function clear() {
+        let ctx = document.getElementById('mycanvas').getContext('2d');
+        ctx.clearRect(0, 0, 1200, 1000)
+    }
+    let a = new creatCircle(100, 100, 30);
+    function move() {
+        clear();
+        a.check();
+        a.draw();
+        a.move();
+    }
+    move();
+    console.log(a.x)
+    setInterval(move,1)
+</script>
+
+</body>
+</html>

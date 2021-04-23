@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="mobile">
+    <p id="iphone-name">Name</p>
+    <textarea id="iphone-inbox" cols="30" rows="10" placeholder="Inbox"></textarea>
+    <textarea id="iphone-outbox" cols="30" rows="10" placeholder="'Outbox"></textarea>
+    <input type="text" id="iphone-msg">
+    <button>Send</button>
+</div>
+<script>
+    let mobile1 = new Mobile('Iphone 12 Pro Max');
+    let mobile2 = new  Mobile('Nokia 1280');
+    mobile1.writeMsg('Hello');
+    mobile1.sendMsg(mobile2);
+    mobile2.writeMsg('who are you')
+    console.log(mobile1);
+    console.log(mobile2)
+</script>
+</body>
+</html>
