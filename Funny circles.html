@@ -7,10 +7,10 @@
 <body>
 <canvas id="myCanvas" width="1368px" height="768px" style="border: 1px solid #d3d3d3;"></canvas>
 <script>
-    // function Circle(x,y,radius){
+    //  function Circle(x,y,radius){
     //     this.x = x;
     //     this.y = y;
-    //     this.radius = radius;
+    //    this.radius = radius;
     // }
     function getRandomHex() {
         return Math.floor(Math.random() * 255);
@@ -27,7 +27,7 @@
         // let radius = Math.floor(Math.random()*80);
         this.x = x;
         this.y = y;
-        this.speed = 1
+        this.speed = 1;
         this.radius = radius;
         //let x = Math.random() * window.innerWidth;
         //let y =    Math.random() * window.innerHeight;
@@ -52,16 +52,14 @@
         let ctx = document.getElementById('myCanvas').getContext('2d');
         ctx.clearRect(0, 0, 1200, 1000)
     }
-
-    function moves() {
+    let b = function moves() {
         clear();
         a.draw();
         a.move();
     }
-
-    moves();
+    b()
     console.log(a.x)
-    setInterval(moves, 1)
+    setInterval(b,1)
 
     //function tao_nhieu_hinh_tron(){
     //for (let i = 0; i <15;i++){
